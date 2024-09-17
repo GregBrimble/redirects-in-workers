@@ -1,13 +1,13 @@
 {
 	"name": "redirects-in-workers",
-	"version": "0.0.1",
-	"description": "Cloudflare Pages' _redirects file in Workers",
+	"version": "0.0.2",
+	"description": "Cloudflare Pages' _redirects file support in Cloudflare Workers",
 	"bugs": {
 		"url": "https://github.com/gregbrimble/redirects-in-workers/issues"
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/gregbrimble/redirects-in-workers.git"
+		"url": "git+https://github.com/gregbrimble/redirects-in-workers.git"
 	},
 	"license": "MIT",
 	"author": {
