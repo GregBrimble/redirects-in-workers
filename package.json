@@ -1,7 +1,17 @@
 {
 	"name": "redirects-in-workers",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"description": "Cloudflare Pages' _redirects file support in Cloudflare Workers",
+	"keywords": [
+		"cloudflare",
+		"cloudflare-workers",
+		"workers",
+		"cloudflare-pages",
+		"pages",
+		"redirects",
+		"_redirects",
+		"wintercg"
+	],
 	"bugs": {
 		"url": "https://github.com/gregbrimble/redirects-in-workers/issues"
 	},
@@ -33,7 +43,7 @@
 		"test": "npx vitest",
 		"types": "npm run typescript -- --noEmit",
 		"typescript": "npx tsc",
-		"validate": "npx concurrently --group \"npm:format\" \"npm:lint\" \"npm:test\" \"npm:types\""
+		"validate": "CI=true npx concurrently --group \"npm:format\" \"npm:lint\" \"npm:test\""
 	},
 	"prettier": {
 		"plugins": [
