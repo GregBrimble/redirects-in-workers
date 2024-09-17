@@ -1,6 +1,6 @@
 {
 	"name": "redirects-in-workers",
-	"version": "0.0.3",
+	"version": "0.0.5",
 	"description": "Cloudflare Pages' _redirects file support in Cloudflare Workers",
 	"keywords": [
 		"cloudflare",

@@ -11,13 +11,15 @@ import {
 } from "@cloudflare/pages-shared/asset-server/rulesEngine.js";
 import { createMetadataObject } from "@cloudflare/pages-shared/metadata-generator/createMetadataObject.js";
 import { parseRedirects } from "@cloudflare/pages-shared/metadata-generator/parseRedirects.js";
-import type { Fetcher } from "@cloudflare/workers-types/experimental";
 
 const REDIRECTS_VERSION = 1;
 
 export const generateRedirectsEvaluator = (
 	redirectsFileContents: string,
-): ((request: Request, assetsBinding: Fetcher) => Promise<Response | null>) => {
+): ((
+	request: Request,
+	assetsBinding: { fetch: (request: Request) => Promise<Response> },
+) => Promise<Response | null>) => {
 	const redirects = parseRedirects(redirectsFileContents);
 	const metadata = createMetadataObject({
 		redirects,
