@@ -1,0 +1,65 @@
+{
+	"name": "redirects-in-workers",
+	"version": "0.0.1",
+	"description": "Cloudflare Pages' _redirects file in Workers",
+	"bugs": {
+		"url": "https://github.com/gregbrimble/redirects-in-workers/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/gregbrimble/redirects-in-workers.git"
+	},
+	"license": "MIT",
+	"author": {
+		"name": "Greg Brimble",
+		"email": "developer@gregbrimble.com",
+		"url": "https://gregbrimble.com"
+	},
+	"type": "module",
+	"main": "./dist/index.js",
+	"files": [
+		"./dist",
+		"./src"
+	],
+	"scripts": {
+		"build": "npm run esbuild && npm run typescript",
+		"esbuild": "npx esbuild ./src/index.ts --bundle --sourcemap --outfile=./dist/index.js --platform=neutral --format=esm --alias:node:path=./node-path.js",
+		"eslint": "npx eslint ./src --cache --cache-location .eslintcache",
+		"format": "npm run prettier -- --check",
+		"format:fix": "npm run prettier -- --write",
+		"lint": "npm run eslint",
+		"lint:fix": "npm run eslint -- --fix",
+		"prettier": "npx prettier . --cache --cache-location .prettiercache",
+		"test": "npx vitest",
+		"types": "npm run typescript -- --noEmit",
+		"typescript": "npx tsc",
+		"validate": "npx concurrently --group \"npm:format\" \"npm:lint\" \"npm:test\" \"npm:types\""
+	},
+	"prettier": {
+		"plugins": [
+			"prettier-plugin-packagejson",
+			"prettier-plugin-sort-json",
+			"prettier-plugin-organize-imports"
+		]
+	},
+	"dependencies": {
+		"@cloudflare/pages-shared": "0.11.58"
+	},
+	"devDependencies": {
+		"@cloudflare/vitest-pool-workers": "0.5.3",
+		"@cloudflare/workers-types": "4.20240909.0",
+		"@eslint/js": "9.10.0",
+		"@types/eslint__js": "8.42.3",
+		"concurrently": "9.0.1",
+		"esbuild": "0.23.1",
+		"eslint": "9.10.0",
+		"prettier": "3.3.3",
+		"prettier-plugin-organize-imports": "4.0.0",
+		"prettier-plugin-packagejson": "2.5.2",
+		"prettier-plugin-sort-json": "4.0.0",
+		"typescript": "5.6.2",
+		"typescript-eslint": "8.6.0",
+		"vitest": "2.1.1",
+		"wrangler": "3.78.3"
+	}
+}
