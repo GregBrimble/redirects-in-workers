@@ -22,11 +22,19 @@
 	"license": "MIT",
 	"author": {
 		"name": "Greg Brimble",
-		"email": "developer@gregbrimble.com",
-		"url": "https://gregbrimble.com"
+		"email": "hello@gregbrimble.com",
+		"url": "https://gregbrimble.com/"
 	},
+	"contributors": [
+		{
+			"name": "Greg Brimble",
+			"email": "hello@gregbrimble.com",
+			"url": "https://gregbrimble.com/"
+		}
+	],
 	"type": "module",
 	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
 	"files": [
 		"./dist",
 		"./src"
@@ -52,10 +60,8 @@
 			"prettier-plugin-organize-imports"
 		]
 	},
-	"dependencies": {
-		"@cloudflare/pages-shared": "0.11.58"
-	},
 	"devDependencies": {
+		"@cloudflare/pages-shared": "0.11.58",
 		"@cloudflare/vitest-pool-workers": "0.5.3",
 		"@cloudflare/workers-types": "4.20240909.0",
 		"@eslint/js": "9.10.0",
